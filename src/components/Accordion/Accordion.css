@@ -1,0 +1,58 @@
+.Accordion__section {
+  border-bottom: 1px solid rgba(151, 151, 151, 0.15);
+  margin-bottom: 0.4rem;
+}
+
+.Accordion__toggle {
+  position: relative;
+  padding: 15px 20px;
+  background-color: white;
+  line-height: 1.3;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.35s, color 0.35s;
+}
+
+.Accordion__inner__dependancy{
+  background-color: #06f;
+  color: white;
+  display: inline-block;
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
+
+.Accordion__toggle:hover {
+  color: #06f;
+  transition-duration: 0.175s;
+}
+
+.Accordion__disable{
+  background-color:#D3D3D3;;
+  pointer-events: none;
+}
+
+.Accordion > .Accordion__section--selected > .Accordion__toggle {
+  background-color: #06f;
+  color: white;
+}
+
+.Accordion__content {
+  background-color: #f5f8fc;
+}
+
+.Accordion__inner .Accordion, span {
+  margin-left: 1.5rem;
+}
+
+.Accordion__content p {
+  margin-top: 0;
+}
+
+.Accordion__content p:last-child {
+  margin-bottom: 0;
+}
+
+.Accordion__inner {
+  padding: 20px 20px 30px;
+}
