@@ -4,7 +4,7 @@
 
 
 ```sh
-Unzip and cd react-packages-viewer
+git clone https://github.com/TanveerAliS/react-packages-viewer.git
 npm i
 npm start
 
