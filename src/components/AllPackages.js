@@ -1,10 +1,13 @@
 import React from "react";
 import Accordion from "./Accordion";
-import { NodeTree } from '../Template';
+import { allPackages } from '../Utils';
+import Template from '../Template';
 
 const AllPackages = () => {
   return (
-    <Accordion>{NodeTree}</Accordion>
+    <Accordion>
+      {allPackages.map((currentPackage, id) => Template(currentPackage, id))}
+    </Accordion>
   );
 }
 

@@ -1,15 +1,18 @@
 import React, { Fragment } from 'react';
 import Accordion from "./Accordion";
-import { Template } from '../Template';
+import Template from '../Template';
+import { pkgDependencies, reversePkgDependencies } from '../Utils';
 
-const Dependencies = ({ currentPackage, id, allPackages }) => {
+const Dependencies = ({ currentPackage, id, isReverse }) => {
+
+    let pkgCount = isReverse ? reversePkgDependencies(currentPackage).length : currentPackage.depends && currentPackage.depends.length;
+    let pkgs = isReverse ? reversePkgDependencies(currentPackage) : pkgDependencies(currentPackage.depends)
     return (
         <Fragment>
-            {currentPackage.depends && currentPackage.depends.length > 0 ?
+            {pkgCount > 0 ?
                 <Accordion>
-                    {currentPackage.depends.split(",").map( packageName => {
-                        let pkg = allPackages.find( item => item.package === packageName.trim().split(" ")[0]) || packageName;
-                        return Template(pkg, id);                                          
+                    {pkgs.map(pkg => {
+                        return Template(pkg, id)
                     })}
                 </Accordion>
                 : <span>Not Dependencies</span>
